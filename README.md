@@ -1,9 +1,10 @@
-## Docker php56-fpm image
+## Docker php56-fpm image (with ffmpeg support)
 
 Docker php56-fpm image, based on alpine image.
 
 - Alpine
 - PHP 5.6.4
+- ffmpeg 3.4.6
 - GD Support
 - Memchache 2.2.4 support
 - Memchached 2.2.0 support
@@ -42,7 +43,7 @@ services:
     networks:
       - default
   php:
-    image: johnnyworks/php56-fpm:alpine
+    image: johnnyworks/php56-fpm:ffmpeg-alpine
     restart: always
     container_name: my-php-fpm
     ulimits:

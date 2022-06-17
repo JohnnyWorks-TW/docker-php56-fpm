@@ -1,7 +1,7 @@
 FROM php:5.6-fpm-alpine
 WORKDIR /var/www
 
-RUN apk add --no-cache autoconf libcurl curl-dev libjpeg jpeg-dev libpng libpng-dev icu-dev libzip libzip-dev shadow freetype freetype-dev libpq postgresql-dev
+RUN apk add --no-cache ffmpeg autoconf libcurl curl-dev libjpeg jpeg-dev libpng libpng-dev icu-dev libzip libzip-dev shadow freetype freetype-dev libpq postgresql-dev
 RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
 RUN docker-php-ext-configure gd --with-freetype-dir=/usr --with-jpeg-dir=/usr --with-png-dir=/usr --with-gnu-ld
 RUN docker-php-ext-install ctype curl gd iconv intl mysql mysqli pdo pdo_mysql zip exif pdo_pgsql pgsql

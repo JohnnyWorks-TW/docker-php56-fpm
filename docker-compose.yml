@@ -22,7 +22,7 @@ services:
     networks:
       - default
   php:
-    image: johnnyworks/php56-fpm:alpine
+    image: johnnyworks/php56-fpm:ffmpeg-alpine
     restart: always
     container_name: my-php-fpm
     ulimits:
